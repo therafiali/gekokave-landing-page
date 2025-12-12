@@ -4,7 +4,7 @@ import { ArrowRight, MoveUpRight } from "lucide-react";
 
 const Header = () => {
     return (
-        <header className="l-header invisible fixed left-1/2 top-[70px] z-[10000] hidden w-[1360px] max-w-[calc(100%-80px)] -translate-x-1/2 items-center justify-between rounded-[16px] bg-white px-[16px] py-[13px] shadow-sm lg:visible lg:flex">
+        <header className="l-header invisible fixed left-1/2 top-10 z-[10000] hidden w-[1360px] max-w-[calc(100%-80px)] -translate-x-1/2 items-center justify-between rounded-[16px] bg-white px-[16px] py-[13px] shadow-sm lg:visible lg:flex">
             <a className="flex items-center gap-2 transition-opacity hover:opacity-80" href="/">
                 <img
                     alt="AudioTech Logo"
@@ -369,11 +369,11 @@ const Header = () => {
                     <span className="">Sign In</span>
                 </a>
                 <a
-                    className="pointer button-primary text-[11px] xl:text-sm group link-/"
+                    className="pointer button-primary group link-/"
                     href="/shop"
                 >
-                    <span className="flex items-center gap-2 text-[11px] xl:text-sm">
-                        Shop Now
+                    <span className="flex items-center gap-2">
+                        Shop
                         <ArrowRight className="w-4 h-4 -rotate-45" />
                     </span>
                 </a>
