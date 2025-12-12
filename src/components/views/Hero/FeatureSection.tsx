@@ -5,31 +5,31 @@ import coralHeadphones from "@/app/assets/rozovye_1.webp"
 
 const FeatureSection = () => {
     return (
-        <section className="px-4 py-8    rounded-3xl " >
-            <div className="bg-[#F5F5F7] px-8 py-8 rounded-3xl shadow-sm">
+        <section className="px-4 py-12 md:py-16 rounded-3xl">
+            <div className="bg-[#F5F5F7] px-6 sm:px-10 py-10 md:py-14 rounded-3xl shadow-sm max-w-7xl mx-auto space-y-12 md:space-y-14">
 
-                <div>
-                    <span className="text-[22px] font-normal text-(--med-gray) opacity-[.9] md:text-[24px]">How we’re rebuilding the prescription experience
+                <div className="space-y-4 md:space-y-6">
+                    <span className="text-[22px] font-normal text-(--med-gray) opacity-[.9] md:text-[24px]">How we’re redefining premium audio
                     </span>
-                    <h2 className="mb-[40px] mt-[40px] text-[40px] font-light md:text-[66px]">
-                        Your prescription.
+                    <h2 className="text-[40px] font-light leading-[1.05] md:text-[66px]">
+                        Your sound.
                         <br />
-                        Your choice. Your terms.
+                        Your style. Your rules.
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 w-full">
                     <WobbleCard
-                        containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
+                        containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[480px] lg:min-h-[340px] overflow-hidden p-6 md:p-8"
                         className=""
                     >
-                        <div className="max-w-xs">
+                        <div className="max-w-xs space-y-4">
                             <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                                Gippity AI powers the entire universe
+                                Spatial audio tuned for every playlist
                             </h2>
-                            <p className="mt-4 text-left  text-base/6 text-neutral-200">
-                                With over 100,000 mothly active bot users, Gippity AI is the most
-                                popular AI platform for developers.
+                            <p className="text-left text-base/6 text-neutral-200">
+                                Adaptive EQ, studio-grade drivers, and ANC built to keep you in
+                                the zone—whether you’re gaming, coding, or commuting.
                             </p>
                         </div>
                         <img
@@ -37,33 +37,32 @@ const FeatureSection = () => {
                             width={500}
                             height={500}
                             alt="green over-ear headphones"
-                            className="absolute -right-4 lg:-right-[40%]   -bottom-10 object-contain rounded-2xl"
+                            className="absolute -right-6 lg:-right-[30%] -bottom-10 object-contain rounded-2xl"
                         />
                     </WobbleCard>
-                    <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+                    <WobbleCard containerClassName="col-span-1 min-h-[320px] p-6 md:p-8 flex flex-col gap-6">
                         <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                            No shirt, no shoes, no weapons.
+                            All-day comfort, zero pressure points
                         </h2>
-                        <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-                            If someone yells “stop!”, goes limp, or taps out, the fight is over.
+                        <p className="max-w-[26rem] text-left text-base/6 text-neutral-200">
+                            Breathable memory foam, featherweight frames, and a 45-hour battery
+                            keep the music going long after the workday ends.
                         </p>
                         <img
                             src={greenHeadphones.src}
                             width={320}
                             height={320}
                             alt="gray over-ear headphones"
-                            
                         />
                     </WobbleCard>
-                    <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+                    <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[520px] lg:min-h-[620px] xl:min-h-[360px] p-6 md:p-10 overflow-hidden">
                         <div className="max-w-sm">
                             <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                                Signup for blazing-fast cutting-edge state of the art Gippity AI
-                                wrapper today!
+                                Build your personal sound lab
                             </h2>
-                            <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-                                With over 100,000 mothly active bot users, Gippity AI is the most
-                                popular AI platform for developers.
+                            <p className="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+                                Swap ear cushions, dial in your profile, and sync seamlessly
+                                across every device—without sacrificing fidelity.
                             </p>
                         </div>
                         <img
@@ -71,7 +70,7 @@ const FeatureSection = () => {
                             width={500}
                             height={500}
                             alt="coral over-ear headphones"
-                            className="absolute right-0 top-0 w-52  rounded-2xl"
+                            className="absolute right-0 top-0 w-52 rounded-2xl"
                         />
                     </WobbleCard>
                 </div>
