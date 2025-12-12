@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  --seafoam: #0bd0de;
+  --button-hover: #472FF7;
+  --light-gray: #f5f5f5;
+  --blue: #472FF7;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* Button Styles */
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--seafoam);
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.button-primary:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(71, 47, 247, 0.3);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.button-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  background-color: transparent;
+  color: #171717;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-outline:hover {
+  border-color: var(--seafoam);
+  color: var(--seafoam);
+  background-color: rgba(11, 208, 222, 0.05);
+}
+
+/* Navigation Dropdown Styles */
+.navDropdown {
+  position: relative;
+}
+
+.navDropdown-menu {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-top: 1rem;
+  width: 100vw;
+  max-width: 938px;
+  transform: translateX(-50%) translateY(-1rem);
+  border-radius: 1rem;
+  background: white;
+  padding: 0.5rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navDropdown:hover .navDropdown-menu {
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Header improvements */
+.l-header {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth transitions for navigation items */
+.navigation a,
+.navigation button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Dropdown item hover improvements */
+.navDropdown-menu a {
+  transition: all 0.2s ease-in-out;
+}
+
+.navDropdown-menu a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 208, 222, 0.15);
 }
