@@ -139,6 +139,10 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.bg-gradient-secondary {
+  background: linear-gradient(180deg, #003ca6, #001740 84.49%);
+}
+
 /* Smooth transitions for navigation items */
 .navigation a,
 .navigation button {
@@ -307,5 +311,211 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* FAQ / Tech Specs overrides */
+@media (min-width: 1440px) {
+  .section--u-i4jjicln1 {
+    position: sticky;
+    top: -30vh;
+    background-color: rgb(253, 253, 253);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 130vh;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container--u-i398sqnjm {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    max-width: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container--u-isaj6fz6p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    max-width: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .div--u-i1s5ms7xc {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(253, 253, 253);
+  }
+}
+
+@media (min-width: 1440px) {
+  .div--u-izjspg1tc {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgb(253, 253, 253);
+  }
+}
+
+@media (min-width: 1440px) {
+  .section--u-i251jw6ct {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 1.04vw;
+    padding-bottom: 1.04vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section--u-i863a03z9 {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 1.04vw;
+    padding-bottom: 1.04vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container--u-i2u1c67h9 {
+    display: none;
+  }
+}
+
+.section-faq__title-wraper {
+  display: flex;
+  justify-content: center;
+}
+
+.section-faq__title {
+  display: block;
+  margin-bottom: 6.05vw;
+  color: rgba(46, 46, 46, 1);
+  text-align: center;
+  z-index: 10;
+}
+
+.section-faq {
+  padding-top: 14.11vw;
+  padding-bottom: 14.11vw;
+}
+
+.section-specs {
+  padding-top: 14.11vw;
+  padding-bottom: 14.11vw;
+}
+
+.section-specs__title-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.section-specs__title {
+  display: inline-block;
+  margin-bottom: 6.05vw;
+  color: rgba(46, 46, 46, 1);
+  text-align: center;
+  z-index: 10;
+}
+
+.section-specs__accordion1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5120967741935485vw;
+  border-top-width: 1px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-color: rgba(46, 46, 46, 0.1);
+  border-left-color: rgba(46, 46, 46, 0.1);
+  border-right-color: rgba(46, 46, 46, 0.1);
+  border-bottom-color: rgba(46, 46, 46, 0.1);
+  border-top-style: solid;
+}
+
+.section-specs__accordion1-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  column-gap: 2.8225806451612905vw;
+  background-size: auto;
+  background-image: none;
+  background-repeat: repeat;
+  background-position: left 0px top 0px;
+  background-attachment: scroll;
+}
+
+.section-specs__accordion1-arrow {
+  width: 4.94vw;
+  height: 4.33vw;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-delay: 0ms;
+  transition-timing-function: ease;
+}
+
+.banner-title-animation {
+  color: rgba(255, 255, 255, 1);
+  z-index: 40;
+  position: absolute;
+}
+
+.banner-photo-wrapper {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  top: 0px;
+  height: 100%;
+  min-height: 1080px;
+}
+
+.pfoto {
+  height: auto;
+  width: 100%;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+.description__text-mob {
+  color: rgba(128, 135, 142, 1);
+  text-align: center;
+  width: 100%;
+}
+
+.section-feedback {
+  top: 0px;
+  background-color: rgb(26, 26, 26);
+}
+
+.section-feedback__sticky {
+  height: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
 }
 

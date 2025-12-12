@@ -14,7 +14,7 @@ const Header = () => {
                     data-nimg={1}
                     className="h-auto md:w-[90px] lg:w-[120px] xl:w-[170px]"
                     style={{ color: "transparent" }}
-                    src="https://images.ctfassets.net/k0ydwkm1u654/4pn4BfoZjXbjOLkOogNsKU/05aac0ebb7813e0e07696ae13bd48bea/photon-logo-black.svg"
+                    src="/logo b.png"
                 />
                 <span className="sr-only">GekoKave</span>
             </a>
@@ -372,7 +372,7 @@ const Header = () => {
                     className="pointer button-primary group link-/"
                     href="/shop"
                 >
-                    <span className="flex items-center gap-2">
+                    <span className="flex items-center gap-2 text-black">
                         Shop
                         <ArrowRight className="w-4 h-4 -rotate-45" />
                     </span>
