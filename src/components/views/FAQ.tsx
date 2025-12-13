@@ -8,8 +8,8 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="section section-specs section--u-i4jjicln1 mx-auto w-full ">
-            <div className="container container1   mx-auto w-full">
+        <section className="section section-specs section--u-i4jjicln1">
+            <div className="container container1  w-full mx-auto">
                 <div className="section-specs__title-wrapper">
                     <h1 className="scroll-m-20 text-center text-7xl mb-8 font-extrabold tracking-tight text-balance">
                         FAQ
@@ -31,8 +31,8 @@ const FAQ = () => {
                                     aria-controls={`faq-panel-${index}`}
                                     id={`faq-trigger-${index}`}
                                 >
-                                    <div className="flex items-center justify-between gap-8 w-full ">
-                                        <span className={`text-4xl font-bold hover:text-orange-500 duration-200 transition-colors ${isOpen ? "text-orange-500" : "text-neutral-800"
+                                    <div className="flex items-center justify-between  gap-8 w-full">
+                                        <span className={`text-4xl font-bold  ${isOpen ? "text-orange-500" : "text-neutral-800"
                                             }`}>
                                             {`${String(index + 1).padStart(2, "0")}. ${item.title}`}
                                         </span>

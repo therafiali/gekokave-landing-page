@@ -571,3 +571,56 @@ body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
+/* Mobile Header Overlay Prevention */
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+/* Ensure content doesn't hide behind mobile header */
+@media (max-width: 1023px) {
+  body {
+    padding-top: 60px; /* Height of mobile header */
+  }
+}
+
+/* Desktop Header - Only show on large screens */
+@media (min-width: 1024px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* Mobile Menu Transitions */
+@media (max-width: 1023px) {
+  .mobile-menu-enter {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Make mobile menu wider on tablets */
+  .mobile-menu-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* Prevent desktop dropdown from showing on mobile */
+@media (max-width: 1023px) {
+  .navDropdown-menu {
+    display: none !important;
+  }
+}

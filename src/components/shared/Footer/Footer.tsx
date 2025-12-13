@@ -12,7 +12,7 @@ const Footer = () => {
                             Subscribe to our&nbsp;newsletter
                         </h2>
                         <form className="test-drive-form mx-auto w-full text-white">
-                            <div className="relative mt-[18px] flex items-center gap-8">
+                            <div className="relative mt-[18px] flex items-center gap-8 border border-black rounded-lg outline-black">
                                 <label className="w-full sm:flex-1">
                                     <span className="sr-only">Email email</span>
                                     <input

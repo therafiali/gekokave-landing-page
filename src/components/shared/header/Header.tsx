@@ -1,5 +1,6 @@
-import { ArrowRight } from "lucide-react";
-
+"use client"
+import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 interface NavigationItem {
   id: number;
@@ -133,9 +134,6 @@ const navigationData: NavigationDataMap = {
   ],
 };
 
-
-
-
 interface MainNavWithDropdown {
   id: number;
   label: string;
@@ -152,7 +150,6 @@ interface MainNavWithoutDropdown {
 
 type MainNavItem = MainNavWithDropdown | MainNavWithoutDropdown;
 
-
 const mainNavItems: MainNavItem[] = [
   { id: 1, label: "Products", hasDropdown: true, dropdownKey: "products" },
   { id: 2, label: "Technology", hasDropdown: true, dropdownKey: "technology" },
@@ -160,7 +157,6 @@ const mainNavItems: MainNavItem[] = [
   { id: 4, label: "Support", hasDropdown: true, dropdownKey: "support" },
   { id: 5, label: "About", hasDropdown: true, dropdownKey: "about" },
 ];
-
 
 // Reusable Components
 const NavDot = () => (
@@ -217,79 +213,198 @@ const DropdownItem: React.FC<DropdownItemProps> = ({ item }) => (
 );
 
 const Header = () => {
-  return (
-    <section className="invisible fixed left-1/2 top-10 z-[10000] hidden w-[1360px] max-w-[calc(100%-80px)] -translate-x-1/2 lg:visible lg:flex p-[2px] rounded-[16px] hover:bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300">
-      <header className="w-full flex items-center justify-between rounded-[16px] bg-white px-[16px] py-[13px] shadow-sm">
-        {/* Logo */}
-        <a className="flex items-center gap-2 transition-opacity hover:opacity-80" href="/">
-          <img
-            alt="AudioTech Logo"
-            decoding="async"
-            data-nimg={1}
-            className="h-auto md:w-[90px] lg:w-[120px] xl:w-[120px]"
-            style={{ color: "transparent" }}
-            src="/logo b.png"
-          />
-          <span className="sr-only">GekoKave</span>
-        </a>
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-        {/* Main Navigation */}
-        <nav className="navigation flex items-center gap-1.5 xl:gap-3">
-          {mainNavItems.map((navItem) => (
-            navItem.hasDropdown ? (
-              <div key={navItem.id} className="navDropdown">
-                <button className="nav-link group">
-                  <span className="relative flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-[11px] transition-all duration-200 xl:text-sm bg-transparent hover:bg-[var(--light-gray)] group-hover:font-medium">
-                    <NavDot />
-                    {navItem.label}
-                    <DropdownIcon />
-                  </span>
-                </button>
-                <div className="navDropdown-menu">
-                  <div className="mx-auto flex w-full max-w-[938px] flex-wrap items-center justify-center gap-4 py-[16px] px-4">
-                    {navigationData[navItem.dropdownKey].map((item) => (
-                      <DropdownItem key={item.id} item={item} />
-                    ))}
+  const toggleDropdown = (key: string) => {
+    setOpenDropdown(openDropdown === key ? null : key);
+  };
+
+  return (
+    <>
+      {/* Desktop Header */}
+      <section className="fixed left-1/2 top-10 z-[10000] w-[1360px] max-w-[calc(100%-80px)] -translate-x-1/2 hidden lg:flex p-[2px] rounded-[16px] hover:bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300">
+        <header className="w-full flex items-center justify-between rounded-[16px] bg-white px-[16px] py-[13px] shadow-sm">
+          {/* Logo */}
+          <a className="flex items-center gap-2 transition-opacity hover:opacity-80" href="/">
+            <img
+              alt="AudioTech Logo"
+              decoding="async"
+              data-nimg={1}
+              className="h-auto md:w-[90px] lg:w-[120px] xl:w-[120px]"
+              style={{ color: "transparent" }}
+              src="/logo b.png"
+            />
+            <span className="sr-only">GekoKave</span>
+          </a>
+
+          {/* Main Navigation */}
+          <nav className="navigation flex items-center gap-1.5 xl:gap-3">
+            {mainNavItems.map((navItem) => (
+              navItem.hasDropdown ? (
+                <div key={navItem.id} className="navDropdown">
+                  <button className="nav-link group">
+                    <span className="relative flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-[11px] transition-all duration-200 xl:text-sm bg-transparent hover:bg-[var(--light-gray)] group-hover:font-medium">
+                      <NavDot />
+                      {navItem.label}
+                      <DropdownIcon />
+                    </span>
+                  </button>
+                  <div className="navDropdown-menu">
+                    <div className="mx-auto flex w-full max-w-[938px] flex-wrap items-center justify-center gap-4 py-[16px] px-4">
+                      {navigationData[navItem.dropdownKey].map((item) => (
+                        <DropdownItem key={item.id} item={item} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <a
-                key={navItem.id}
-                className="pointer relative flex items-center gap-2 rounded-[20px] px-4 py-2 transition-colors hover:bg-[var(--light-gray)] group link-/"
-                href={navItem.href}
-              >
-                <span className="relative flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-[11px] transition-all duration-200 xl:text-sm bg-transparent group-hover:bg-[var(--light-gray)] group-hover:font-medium">
-                  <NavDot />
-                  {navItem.label}
-                </span>
-              </a>
-            )
-          ))}
-        </nav>
+              ) : (
+                <a
+                  key={navItem.id}
+                  className="pointer relative flex items-center gap-2 rounded-[20px] px-4 py-2 transition-colors hover:bg-[var(--light-gray)] group link-/"
+                  href={navItem.href}
+                >
+                  <span className="relative flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-[11px] transition-all duration-200 xl:text-sm bg-transparent group-hover:bg-[var(--light-gray)] group-hover:font-medium">
+                    <NavDot />
+                    {navItem.label}
+                  </span>
+                </a>
+              )
+            ))}
+          </nav>
 
-        {/* Right Navigation */}
-        <nav className="flex items-center gap-1.5 xl:gap-3">
-          <a
-            href="/login"
-            className="pointer button-outline text-[11px] xl:text-sm group link-/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>Sign In</span>
+          {/* Right Navigation */}
+          <nav className="flex items-center gap-1.5 xl:gap-3">
+            <a
+              href="/login"
+              className="pointer button-outline text-[11px] xl:text-sm group link-/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Sign In</span>
+            </a>
+            <a
+              className="pointer button-primary group link-/"
+              href="/shop"
+            >
+              <span className="flex items-center gap-2 text-black">
+                Shop
+                <ArrowRight className="w-4 h-4 -rotate-45" />
+              </span>
+            </a>
+          </nav>
+        </header>
+      </section>
+
+      {/* Mobile/Tablet Header */}
+      <header className="lg:hidden fixed top-0 left-0 right-0 z-[10000] bg-white shadow-md">
+        <div className="flex items-center justify-between px-4 py-3">
+          {/* Logo */}
+          <a className="flex items-center gap-2" href="/">
+            <img
+              alt="AudioTech Logo"
+              className="h-8 w-auto"
+              src="/logo b.png"
+            />
           </a>
-          <a
-            className="pointer button-primary group link-/"
-            href="/shop"
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            aria-label="Toggle menu"
           >
-            <span className="flex items-center gap-2 text-black">
-              Shop
-              <ArrowRight className="w-4 h-4 -rotate-45" />
-            </span>
-          </a>
-        </nav>
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 right-0 bg-white shadow-lg max-h-[calc(100vh-60px)] overflow-y-auto">
+            <nav className="px-4 py-4 space-y-2">
+              {mainNavItems.map((navItem) => (
+                <div key={navItem.id}>
+                  {navItem.hasDropdown ? (
+                    <>
+                      <button
+                        onClick={() => toggleDropdown(navItem.dropdownKey)}
+                        className="w-full flex items-center justify-between py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        <span className="font-medium">{navItem.label}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            openDropdown === navItem.dropdownKey ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {openDropdown === navItem.dropdownKey && (
+                        <div className="pl-4 space-y-1 mt-2">
+                          {navigationData[navItem.dropdownKey].map((item) => (
+                            <a
+                              key={item.id}
+                              href={item.href}
+                              className="flex items-center gap-3 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100">
+                                <svg
+                                  width="20"
+                                  height="20"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  strokeWidth="2"
+                                >
+                                  <path d={item.icon} />
+                                  {item.additionalPaths?.map((path, idx) => (
+                                    <path key={idx} d={path} />
+                                  ))}
+                                </svg>
+                              </div>
+                              <span className="text-sm">{item.title}</span>
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <a
+                      href={navItem.href}
+                      className="block py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {navItem.label}
+                    </a>
+                  )}
+                </div>
+              ))}
+
+              {/* Mobile Auth Buttons */}
+              <div className="pt-4 space-y-2 border-t">
+                <a
+                  href="/login"
+                  className="block w-full text-center py-3 px-4 rounded-lg border border-gray-300 hover:border-[var(--seafoam)] hover:text-[var(--seafoam)] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign In
+                </a>
+                <a
+                  href="/shop"
+                  className="block w-full text-center py-3 px-4 rounded-lg bg-[var(--seafoam)] text-white hover:bg-[var(--button-hover)] transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Shop
+                </a>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
-    </section>
+    </>
   );
 };
 
