@@ -8,8 +8,8 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="section section-specs section--u-i4jjicln1">
-            <div className="container container1">
+        <section className="section section-specs section--u-i4jjicln1 mx-auto w-full ">
+            <div className="container container1   mx-auto w-full">
                 <div className="section-specs__title-wrapper">
                     <h1 className="scroll-m-20 text-center text-7xl mb-8 font-extrabold tracking-tight text-balance">
                         FAQ

@@ -1,60 +1,74 @@
 import { ArrowRight } from "lucide-react";
 
-// Navigation Data
-const navigationData = {
+
+interface NavigationItem {
+  id: number;
+  title: string;
+  href: string;
+  icon: string;
+  additionalPaths?: string[];
+}
+
+type NavigationGroupKey = "products" | "technology" | "support" | "about";
+
+type NavigationDataMap = Record<NavigationGroupKey, NavigationItem[]>;
+
+const navigationData: NavigationDataMap = {
   products: [
     {
       id: 1,
       title: "Wireless",
       href: "/wireless",
-      icon: "M12 2v20M8 6h8M8 12h8M8 18h8"
+      icon: "M12 2v20M8 6h8M8 12h8M8 18h8",
     },
     {
       id: 2,
       title: "Wired",
       href: "/wired",
-      icon: "M4 12h16M12 4v16"
+      icon: "M4 12h16M12 4v16",
     },
     {
       id: 3,
       title: "Gaming",
       href: "/gaming",
       icon: "M2 2h20v20H2z",
-      additionalPaths: ["M8 8h8M8 12h8M8 16h4"]
+      additionalPaths: ["M8 8h8M8 12h8M8 16h4"],
     },
     {
       id: 4,
       title: "Professional",
       href: "/professional",
-      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-    }
+      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+    },
   ],
   technology: [
     {
       id: 1,
       title: "Noise Cancellation",
       href: "/noise-cancellation",
-      icon: "M12 2v20M8 8h8M8 12h8M8 16h4"
+      icon: "M12 2v20M8 8h8M8 12h8M8 16h4",
     },
     {
       id: 2,
       title: "Sound Quality",
       href: "/sound-quality",
-      icon: "M3 12h18M12 3v18"
+      icon: "M3 12h18M12 3v18",
     },
     {
       id: 3,
       title: "Battery Life",
       href: "/battery-life",
       icon: "M2 7h20v14H2z",
-      additionalPaths: ["M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"]
+      additionalPaths: [
+        "M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2",
+      ],
     },
     {
       id: 4,
       title: "Connectivity",
       href: "/connectivity",
-      icon: "M8 12h8M12 8v8M3 12h18M12 3v18"
-    }
+      icon: "M8 12h8M12 8v8M3 12h18M12 3v18",
+    },
   ],
   support: [
     {
@@ -62,58 +76,91 @@ const navigationData = {
       title: "FAQs",
       href: "/faq",
       icon: "M12 12m-10 0a10 10 0 1 0 20 0a10 10 0 1 0 -20 0",
-      additionalPaths: ["M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"]
+      additionalPaths: [
+        "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01",
+      ],
     },
     {
       id: 2,
       title: "Warranty",
       href: "/warranty",
-      icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+      icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
     },
     {
       id: 3,
       title: "Manuals",
       href: "/manuals",
       icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      additionalPaths: ["M14 2v6h6M16 13H8M16 17H8M10 9H8"]
+      additionalPaths: [
+        "M14 2v6h6",
+        "M16 13H8",
+        "M16 17H8",
+        "M10 9H8",
+      ],
     },
     {
       id: 4,
       title: "Contact",
       href: "/contact",
-      icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-    }
+      icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
+    },
   ],
   about: [
     {
       id: 1,
       title: "Our Story",
       href: "/our-story",
-      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
     },
     {
       id: 2,
       title: "Press",
       href: "/press",
       icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      additionalPaths: ["M14 2v6h6M16 13H8M16 17H8M10 9H8"]
+      additionalPaths: [
+        "M14 2v6h6",
+        "M16 13H8",
+        "M16 17H8",
+        "M10 9H8",
+      ],
     },
     {
       id: 3,
       title: "Careers",
       href: "/careers",
-      icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-    }
-  ]
+      icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+    },
+  ],
 };
 
-const mainNavItems = [
+
+
+
+interface MainNavWithDropdown {
+  id: number;
+  label: string;
+  hasDropdown: true;
+  dropdownKey: NavigationGroupKey;
+}
+
+interface MainNavWithoutDropdown {
+  id: number;
+  label: string;
+  hasDropdown: false;
+  href: string;
+}
+
+type MainNavItem = MainNavWithDropdown | MainNavWithoutDropdown;
+
+
+const mainNavItems: MainNavItem[] = [
   { id: 1, label: "Products", hasDropdown: true, dropdownKey: "products" },
   { id: 2, label: "Technology", hasDropdown: true, dropdownKey: "technology" },
   { id: 3, label: "Reviews", hasDropdown: false, href: "/reviews" },
   { id: 4, label: "Support", hasDropdown: true, dropdownKey: "support" },
-  { id: 5, label: "About", hasDropdown: true, dropdownKey: "about" }
+  { id: 5, label: "About", hasDropdown: true, dropdownKey: "about" },
 ];
+
 
 // Reusable Components
 const NavDot = () => (
@@ -136,7 +183,11 @@ const DropdownIcon = () => (
   </svg>
 );
 
-const DropdownItem = ({ item }) => (
+interface DropdownItemProps {
+  item: NavigationItem;
+}
+
+const DropdownItem: React.FC<DropdownItemProps> = ({ item }) => (
   <a
     className="pointer radius-[20px] group flex w-1/4 min-w-[200px] items-center gap-4 rounded-[20px] border p-[9px] border-transparent hover:border-[var(--seafoam)] transition-all duration-200"
     href={item.href}
