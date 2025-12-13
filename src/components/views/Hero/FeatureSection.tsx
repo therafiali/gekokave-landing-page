@@ -39,7 +39,7 @@ const FeatureSection = () => {
                             width={500}
                             height={500}
                             alt="coral over-ear headphones"
-                            className="absolute -right-8 sm:-right-6 lg:-right-[30%] -bottom-8 sm:-bottom-10 object-contain rounded-2xl w-[280px] sm:w-[350px] md:w-[400px] lg:w-[500px]"
+                            className="absolute right-[50%] left-[50%] -bottom-10 w-40 sm:-right-6 lg:-right-[30%]  sm:-bottom-10 object-contain rounded-2xl  sm:w-[350px] md:w-[400px] lg:w-[500px]"
                         />
                     </WobbleCard>
 
@@ -66,7 +66,7 @@ const FeatureSection = () => {
                     </WobbleCard>
 
                     {/* Card 3 - Gray Headphones */}
-                    <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[440px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[620px] xl:min-h-[360px] p-5 sm:p-6 md:p-10 overflow-hidden relative" >
+                    <WobbleCard containerClassName="col-span-1  lg:col-span-3 bg-blue-900 min-h-[440px] sm:min-h-[480px] md:min-h-[520px] lg:min-h-[620px] xl:min-h-[360px] p-5 sm:p-6 md:p-10 overflow-hidden relative" >
                         <div className="max-w-sm relative z-10">
                             <h2 className="max-w-sm md:max-w-lg text-left text-balance text-lg sm:text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
                                 Build your personal sound lab
@@ -81,7 +81,7 @@ const FeatureSection = () => {
                             width={500}
                             height={500}
                             alt="gray over-ear headphones"
-                            className="absolute right-0 top-0 w-32 sm:w-40 md:w-44 lg:w-52 rounded-2xl" 
+                            className="absolute right-0 bottom-0 w-32 sm:w-40 md:w-44 lg:w-52 rounded-2xl" 
                         />
                     </WobbleCard>
                 </div>

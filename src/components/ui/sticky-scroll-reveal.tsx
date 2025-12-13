@@ -143,20 +143,20 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
         */}
         <div 
             ref={mobileRef}
-            className="flex flex-row overflow-x-scroll snap-x snap-mandatory lg:hidden w-full h-full scrollbar-hide"
+            className="flex flex-row  overflow-x-scroll snap-x snap-mandatory lg:hidden w-full h-full scrollbar-hide"
         >
           {content.map((item, index) => (
             // Each card takes the full screen width and snaps into place
             <div 
               key={`${item.title}-${index}`} 
-              className="flex-shrink-0 w-full snap-center p-4"
+              className="flex-shrink-0 w-full snap-center p-4 scrollbar-hide"
               style={{ minWidth: "100vw" }} // Ensure it snaps exactly to screen width
             >
               {/* MOBILE CONTENT PANEL (Visible per-card on mobile) */}
               <div
                 style={{ background: linearGradients[index % linearGradients.length] }}
                 className={cn(
-                  "h-60 w-full rounded-md",
+                  "h-60 w-full rounded-md scrollbar-hide",
                   contentClassName
                 )}
               >
