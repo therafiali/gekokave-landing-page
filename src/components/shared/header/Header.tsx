@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -60,9 +60,7 @@ const navigationData: NavigationDataMap = {
       title: "Battery Life",
       href: "/battery-life",
       icon: "M2 7h20v14H2z",
-      additionalPaths: [
-        "M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2",
-      ],
+      additionalPaths: ["M6 7V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"],
     },
     {
       id: 4,
@@ -77,9 +75,7 @@ const navigationData: NavigationDataMap = {
       title: "FAQs",
       href: "/faq",
       icon: "M12 12m-10 0a10 10 0 1 0 20 0a10 10 0 1 0 -20 0",
-      additionalPaths: [
-        "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01",
-      ],
+      additionalPaths: ["M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"],
     },
     {
       id: 2,
@@ -92,12 +88,7 @@ const navigationData: NavigationDataMap = {
       title: "Manuals",
       href: "/manuals",
       icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      additionalPaths: [
-        "M14 2v6h6",
-        "M16 13H8",
-        "M16 17H8",
-        "M10 9H8",
-      ],
+      additionalPaths: ["M14 2v6h6", "M16 13H8", "M16 17H8", "M10 9H8"],
     },
     {
       id: 4,
@@ -118,12 +109,7 @@ const navigationData: NavigationDataMap = {
       title: "Press",
       href: "/press",
       icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      additionalPaths: [
-        "M14 2v6h6",
-        "M16 13H8",
-        "M16 17H8",
-        "M10 9H8",
-      ],
+      additionalPaths: ["M14 2v6h6", "M16 13H8", "M16 17H8", "M10 9H8"],
     },
     {
       id: 3,
@@ -165,17 +151,13 @@ const NavDot = () => (
 
 const DropdownIcon = () => (
   <svg
-    className="h-4 w-4 transition-transform"
+    className="h-4 w-4 transition-transform group-hover:rotate-180 duration-300"
     fill="none"
     stroke="currentColor"
     strokeWidth={2}
     viewBox="0 0 24 24"
   >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19 9l-7 7-7-7"
-    />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
   </svg>
 );
 
@@ -226,7 +208,10 @@ const Header = () => {
       <section className="fixed left-1/2 top-10 z-[10000] w-[1360px] max-w-[calc(100%-80px)] -translate-x-1/2 hidden lg:flex p-[2px] rounded-[16px] hover:bg-gradient-to-r from-blue-500 to-pink-500 transition-all duration-300">
         <header className="w-full flex items-center justify-between rounded-[16px] bg-white px-[16px] py-[13px] shadow-sm">
           {/* Logo */}
-          <a className="flex items-center gap-2 transition-opacity hover:opacity-80" href="/">
+          <a
+            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            href="/"
+          >
             <img
               alt="AudioTech Logo"
               decoding="async"
@@ -240,7 +225,7 @@ const Header = () => {
 
           {/* Main Navigation */}
           <nav className="navigation flex items-center gap-1.5 xl:gap-3">
-            {mainNavItems.map((navItem) => (
+            {mainNavItems.map((navItem) =>
               navItem.hasDropdown ? (
                 <div key={navItem.id} className="navDropdown">
                   <button className="nav-link group">
@@ -270,7 +255,7 @@ const Header = () => {
                   </span>
                 </a>
               )
-            ))}
+            )}
           </nav>
 
           {/* Right Navigation */}
@@ -283,10 +268,7 @@ const Header = () => {
             >
               <span>Sign In</span>
             </a>
-            <a
-              className="pointer button-primary group link-/"
-              href="/shop"
-            >
+            <a className="pointer button-primary group link-/" href="/shop">
               <span className="flex items-center gap-2 text-black">
                 Shop
                 <ArrowRight className="w-4 h-4 -rotate-45" />
@@ -337,7 +319,9 @@ const Header = () => {
                         <span className="font-medium">{navItem.label}</span>
                         <ChevronDown
                           className={`w-4 h-4 transition-transform ${
-                            openDropdown === navItem.dropdownKey ? "rotate-180" : ""
+                            openDropdown === navItem.dropdownKey
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
