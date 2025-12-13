@@ -268,8 +268,8 @@ const Header = () => {
             >
               <span>Sign In</span>
             </a>
-            <a className="pointer button-primary group link-/" href="/shop">
-              <span className="flex items-center gap-2 text-black">
+            <a className="pointer button-primary  group link-/" href="/shop">
+              <span className="flex items-center gap-2 text-black group-hover:text-white">
                 Shop
                 <ArrowRight className="w-4 h-4 -rotate-45" />
               </span>

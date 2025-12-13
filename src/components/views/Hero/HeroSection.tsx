@@ -30,7 +30,7 @@ const HeroSection = () => {
               height={2000}
               decoding="async"
               data-nimg={1}
-              className="mx-auto h-auto w-[48vw]  min-w-[1200px]"
+              className="mx-auto h-auto w-[48vw]  min-w-[1000px] xl:min-w-[1200px]"
               sizes="(max-width: 800px) 100vw, 500px"
               srcSet="/heroimage.jpg"
               src="/heroimage.jpg"
