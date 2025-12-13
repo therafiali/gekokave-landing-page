@@ -16,8 +16,8 @@ const HeroSection = () => {
                     data-nimg={1}
                     className="h-full w-full object-cover object-bottom"
                     sizes="100vw"
-                    srcSet="https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=640&q=75&fm=webp 640w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=750&q=75&fm=webp 750w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=828&q=75&fm=webp 828w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=1080&q=75&fm=webp 1080w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=1200&q=75&fm=webp 1200w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=1920&q=75&fm=webp 1920w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=2048&q=75&fm=webp 2048w, https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=3840&q=75&fm=webp 3840w"
-                    src="https://images.ctfassets.net/k0ydwkm1u654/7b0rSIr9KTk032gwAcoOuz/6e80dd73c587951f8907857e257bb4b8/hero_image.png?w=3840&q=75&fm=webp"
+                 
+                    src="/bg.webp"
                     style={{ color: "transparent" }}
                 />
             </div>
