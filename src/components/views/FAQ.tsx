@@ -31,8 +31,8 @@ const FAQ = () => {
                                     aria-controls={`faq-panel-${index}`}
                                     id={`faq-trigger-${index}`}
                                 >
-                                    <div className="flex items-center justify-between gap-8 w-full">
-                                        <span className={`text-4xl font-bold  ${isOpen ? "text-orange-500" : "text-neutral-800"
+                                    <div className="flex items-center justify-between gap-8 w-full ">
+                                        <span className={`text-4xl font-bold hover:text-orange-500 duration-200 transition-colors ${isOpen ? "text-orange-500" : "text-neutral-800"
                                             }`}>
                                             {`${String(index + 1).padStart(2, "0")}. ${item.title}`}
                                         </span>
