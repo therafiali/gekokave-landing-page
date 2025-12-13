@@ -19,7 +19,7 @@ const HeroSection = () => {
         <div className="l-container l-container--hero__content relative z-0 flex flex-col-reverse pb-[40px] lg:flex-row lg:items-end min-h-[50vh] lg:h-[822px] justify-center lg:justify-start">
           {/* main headphoone image */}
           <div className="absolute inset-0 flex items-center justify-center text-center">
-            <span className="text-6xl lg:text-7xl font-black uppercase tracking-tight opacity-90 leading-none">
+            <span className="text-6xl lg:text-7xl text-black font-black uppercase tracking-tight opacity-90 leading-none">
               Immersive studio sound
             </span>
           </div>
@@ -34,6 +34,17 @@ const HeroSection = () => {
               sizes="(max-width: 800px) 100vw, 500px"
               srcSet="/heroimage.jpg"
               src="/heroimage.jpg"
+              style={{ color: "transparent" }}
+            />
+          </div>
+          <div className="overflow-hidden lg:hidden">
+            <img
+              alt="Let patients shop between pharmacies."
+              decoding="async"
+              data-nimg={1}
+              className="mx-auto max-w-[100vw] bg-amber-900/5 bg-blend-overlay shadow-amber-200  transform scaleX(-1)"
+              sizes="(max-width: 800px) 100vw, 500px"
+              src="/phones_2.webp"
               style={{ color: "transparent" }}
             />
           </div>
