@@ -11,7 +11,7 @@ const cn = (...classes: (string | undefined | false)[]) =>
 /* ---------------------------------- Types --------------------------------- */
 
 interface StickyScrollItem {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   content?: React.ReactNode;
 }
@@ -141,14 +141,14 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
           - overflow-x-scroll and snap-x-mandatory for the carousel effect
           - w-full and h-full to take up the necessary mobile screen space
         */}
-        <div 
-            ref={mobileRef}
-            className="flex flex-row  overflow-x-scroll snap-x snap-mandatory lg:hidden w-full h-full scrollbar-hide"
+        <div
+          ref={mobileRef}
+          className="flex flex-row  overflow-x-scroll snap-x snap-mandatory lg:hidden w-full h-full scrollbar-hide"
         >
           {content.map((item, index) => (
             // Each card takes the full screen width and snaps into place
-            <div 
-              key={`${item.title}-${index}`} 
+            <div
+              key={`${item.title}-${index}`}
               className="flex-shrink-0 w-full snap-center p-4 scrollbar-hide"
               style={{ minWidth: "100vw" }} // Ensure it snaps exactly to screen width
             >
@@ -167,7 +167,7 @@ export const StickyScroll: React.FC<StickyScrollProps> = ({
               <div className="mt-8 text-black">
                 <motion.h2
                   // No motion here as the parent is scrolling, not the individual text opacity
-                  className="text-4xl font-extrabold tracking-tight" 
+                  className="text-4xl font-extrabold tracking-tight"
                 >
                   {item.title}
                 </motion.h2>

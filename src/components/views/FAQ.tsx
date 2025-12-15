@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ArrowDownRight } from "lucide-react";
 import { faqs } from "@/data/faq";
+import { GradualSpacing } from "@/components/ui/gradual-spacing";
 
 
 const FAQ = () => {
@@ -11,9 +12,10 @@ const FAQ = () => {
         <section className="section section-specs section--u-i4jjicln1">
             <div className="container container1  w-full mx-auto">
                 <div className="section-specs__title-wrapper">
-                    <h1 className="scroll-m-20 text-center text-7xl mb-8 font-extrabold tracking-tight text-balance">
-                        FAQ
-                    </h1>
+                    <GradualSpacing
+                        text="FAQ"
+                        className="text-7xl mb-8 font-extrabold tracking-tight text-balance max-w-xs lg:max-w-none text-center"
+                    />
                 </div>
 
                 <div className="  px-8">

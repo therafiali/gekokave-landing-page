@@ -1,3 +1,5 @@
+import { GradualSpacing } from "@/components/ui/gradual-spacing";
+
 const HeroSection = () => {
   return (
     <>
@@ -18,10 +20,14 @@ const HeroSection = () => {
         </div>
         <div className="l-container l-container--hero__content relative z-0 flex flex-col-reverse pb-[40px] lg:flex-row lg:items-end min-h-[50vh] lg:h-[822px] justify-center lg:justify-start">
           {/* main headphoone image */}
-          <div className="absolute inset-0 flex items-center justify-center text-center">
-            <span className="text-6xl lg:text-7xl text-black font-black uppercase tracking-tight opacity-90 leading-none">
+          <div className="absolute inset-0 z-[20] flex items-center justify-center text-center max-w-xs lg:max-w-none">
+            {/* <span className="text-6xl lg:text-7xl text-black font-black uppercase tracking-tight opacity-90 leading-none">
               Immersive studio sound
-            </span>
+            </span> */}
+            <GradualSpacing
+              text="Immersive studio sound"
+              className="max-w-xs lg:max-w-none text-6xl lg:text-7xl text-black font-black uppercase tracking-tight opacity-90 leading-none"
+            />
           </div>
           <div className="hero-center-image pointer-events-none absolute inset-0 z-[10] hidden h-full w-full items-center justify-center lg:flex">
             <img

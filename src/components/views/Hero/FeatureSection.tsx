@@ -1,4 +1,5 @@
 import { WobbleCard } from "@/components/ui/wobble-card"
+import { GradualSpacing } from "@/components/ui/gradual-spacing";
 import greenHeadphones from "@/app/assets/0000_1.webp"
 import grayHeadphones from "@/app/assets/phones_1.webp"
 import coralHeadphones from "@/app/assets/rozovye_1.webp"
@@ -12,11 +13,10 @@ const FeatureSection = () => {
                     <span className="text-[18px] sm:text-[20px] md:text-[24px] font-normal text-gray-600 opacity-[.9] block">
                         How we're redefining premium audio
                     </span>
-                    <h2 className="text-[32px] sm:text-[36px] md:text-[66px] font-light leading-[1.1] sm:leading-[1.08] md:leading-[1.05]">
-                        Your sound.
-                        <br />
-                        Your style. Your rules.
-                    </h2>
+                    <GradualSpacing
+                        text="Your sound. Your style. Your rules."
+                        className="max-w-xs lg:max-w-none text-[32px] sm:text-[36px] md:text-[66px] font-light leading-[1.1] sm:leading-[1.08] md:leading-[1.05]"
+                    />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 w-full">
@@ -81,7 +81,7 @@ const FeatureSection = () => {
                             width={500}
                             height={500}
                             alt="gray over-ear headphones"
-                            className="absolute right-0 bottom-0 w-32 sm:w-40 md:w-44 lg:w-52 rounded-2xl" 
+                            className="absolute right-0 bottom-0 w-32 sm:w-40 md:w-44 lg:w-52 rounded-2xl"
                         />
                     </WobbleCard>
                 </div>

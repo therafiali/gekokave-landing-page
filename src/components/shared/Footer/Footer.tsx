@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { GradualSpacing } from "@/components/ui/gradual-spacing";
 
 const Footer = () => {
   const footerLinks = [
@@ -41,8 +42,8 @@ const Footer = () => {
     {
       title: "Follow Us",
       links: [
-        { name: "X (Tech Updates)", href: "https://x.com/techbrand" },
-        { name: "LinkedIn (Reviews & News)", href: "https://www.linkedin.com/company/techbrand" },
+        { name: "X (Tech Updates)", href: "https://x.com/" },
+        { name: "LinkedIn (Reviews & News)", href: "https://www.linkedin.com/" },
       ],
     },
   ];
@@ -59,9 +60,10 @@ const Footer = () => {
         <div className="bg-gradient-to-b from-white to-[#d9d8d8] flex flex-wrap rounded-[16px] px-[24px] py-[40px] text-black">
           {/* Newsletter Section */}
           <div className="mb-4 w-full md:mb-0 md:w-1/3 md:max-w-[385px]">
-            <h2 className="text-[38px] font-light">
-              Get the Latest Headphone & Tech Deals
-            </h2>
+            <GradualSpacing
+              text="Get the Latest Headphone & Tech Deals"
+              className="text-[38px] font-light max-w-xs lg:max-w-none text-left"
+            />
             <form className="test-drive-form mx-auto w-full text-white">
               <div className="relative mt-[18px] flex items-center gap-8 border border-black rounded-lg outline-black">
                 <label className="w-full sm:flex-1">
