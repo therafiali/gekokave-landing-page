@@ -6,11 +6,9 @@ import HeroSection from "@/components/views/Hero/HeroSection";
 import { StickyScrollRevealDemo } from "@/components/views/Showcase/ProductShowcase";
 import ScrollReveal from "@/components/shared/ScrollReveal";
 
-
 export default function Home() {
   return (
     <>
-      <Header />
       <ScrollReveal width="100%">
         <HeroSection />
       </ScrollReveal>
@@ -23,7 +21,6 @@ export default function Home() {
       <ScrollReveal width="100%">
         <FAQ />
       </ScrollReveal>
-      <Footer />
     </>
   );
 }

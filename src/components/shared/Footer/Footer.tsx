@@ -152,7 +152,7 @@ const Footer = () => {
             ))}
           </ul>
           <p className="mt-[20px] sm:mt-0">
-            ©&nbsp;2025 YourBrandName. All Rights Reserved.
+            ©&nbsp;2025 GEKOKAVE. All Rights Reserved.
           </p>
         </div>
       </div>
