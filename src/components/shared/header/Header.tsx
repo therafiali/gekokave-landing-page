@@ -15,6 +15,27 @@ type NavigationGroupKey = "products" | "technology" | "support" | "about";
 type NavigationDataMap = Record<NavigationGroupKey, NavigationItem[]>;
 
 const navigationData: NavigationDataMap = {
+  about: [
+    {
+      id: 1,
+      title: "Our Story",
+      href: "/our-story",
+      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+    },
+    {
+      id: 2,
+      title: "Press",
+      href: "/press",
+      icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
+      additionalPaths: ["M14 2v6h6", "M16 13H8", "M16 17H8", "M10 9H8"],
+    },
+    {
+      id: 3,
+      title: "Careers",
+      href: "/careers",
+      icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
+    },
+  ],
   products: [
     {
       id: 1,
@@ -97,27 +118,7 @@ const navigationData: NavigationDataMap = {
       icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z",
     },
   ],
-  about: [
-    {
-      id: 1,
-      title: "Our Story",
-      href: "/our-story",
-      icon: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
-    },
-    {
-      id: 2,
-      title: "Press",
-      href: "/press",
-      icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z",
-      additionalPaths: ["M14 2v6h6", "M16 13H8", "M16 17H8", "M10 9H8"],
-    },
-    {
-      id: 3,
-      title: "Careers",
-      href: "/careers",
-      icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z",
-    },
-  ],
+
 };
 
 interface MainNavWithDropdown {
@@ -137,11 +138,11 @@ interface MainNavWithoutDropdown {
 type MainNavItem = MainNavWithDropdown | MainNavWithoutDropdown;
 
 const mainNavItems: MainNavItem[] = [
+  { id: 0, label: "About", hasDropdown: true, dropdownKey: "about" },
   { id: 1, label: "Products", hasDropdown: true, dropdownKey: "products" },
   { id: 2, label: "Technology", hasDropdown: true, dropdownKey: "technology" },
   { id: 3, label: "Reviews", hasDropdown: false, href: "/reviews" },
   { id: 4, label: "Support", hasDropdown: true, dropdownKey: "support" },
-  { id: 5, label: "About", hasDropdown: true, dropdownKey: "about" },
 ];
 
 // Reusable Components
@@ -318,11 +319,10 @@ const Header = () => {
                       >
                         <span className="font-medium">{navItem.label}</span>
                         <ChevronDown
-                          className={`w-4 h-4 transition-transform ${
-                            openDropdown === navItem.dropdownKey
-                              ? "rotate-180"
-                              : ""
-                          }`}
+                          className={`w-4 h-4 transition-transform ${openDropdown === navItem.dropdownKey
+                            ? "rotate-180"
+                            : ""
+                            }`}
                         />
                       </button>
                       {openDropdown === navItem.dropdownKey && (
